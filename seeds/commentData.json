@@ -1,0 +1,15 @@
+[{
+    "comments": "this is the comment",
+    "user_id": 1,
+    "post_id": 2
+}, 
+{
+    "comments": "this is the second comment",
+    "user_id": 1,
+    "post_id": 2
+},
+{
+    "comments": "this is the third comment",
+    "user_id": 1,
+    "post_id": 2
+}]
