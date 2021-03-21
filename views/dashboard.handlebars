@@ -12,7 +12,7 @@
                 <textarea class="form-input" id="post-content" name="post-content"></textarea>
             </div>
             <div class="form-group">
-                <button type="submit" class="postBtn btn-primary">Create</button>
+                <button type="button" class="postBtn btn-primary">Create</button>
             </div>
         </form>
     </div>
@@ -35,18 +35,5 @@
     </div>
 </div>
 
-<script>document
-        .querySelector("#homepageBtn")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            console.log("homebutton");
-            document.location.replace("/");
-        });
-    document
-        .querySelector("#logoutBtn")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            document.location.replace("/login");
-            // probably do some other stuff too with session 
-        });
+<script src="/js/script.js">
 </script>

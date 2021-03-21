@@ -25,14 +25,18 @@
                         <li class="nav-item">
                             <button id="dashBtn" class="nav-link">Dashboard</button>
                         </li>
+                        {{#unless logged_in}}
                         <li class="nav-item">
                             {{!-- if logged in logout if not login button --}}
                             <button id="loginBtn" class="nav-link">Login</button>
                         </li>
+                        {{/unless}}
+                        {{#if logged_in}}
                         <li class="nav-item">
                             {{!-- if logged in logout if not login button --}}
                             <button id="logoutBtn" class="nav-link">Logout</button>
                         </li>
+                        {{/if}}
                     </ul>
                 </div>
             </div>
@@ -42,6 +46,15 @@
     <main>
         {{{ body }}}
     </main>
+    <footer>
+
+    </footer>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    {{#unless logged_in}}
+    <script src="/js/login.js"></script>
+    {{/unless}}
 </body>
 
 </html>
