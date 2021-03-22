@@ -25,9 +25,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       where: {
-        user_id: req.session.id,
+        user_id: req.session.user_id,
       },
-      // idk if this is gonna work ahaha
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -49,4 +48,24 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/post/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render("post", {
+      posts,
+      logged_in: req.session.logged_in,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({ message: "No Post found with this id" });
+    return;
+  }
+});
 module.exports = router;

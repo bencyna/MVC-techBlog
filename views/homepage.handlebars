@@ -2,11 +2,12 @@
     <h3 id="history">
         Posts:
     </h3>
-    <div class="">
+    <div class="posts">
         {{#each posts as |post|}}
         <div class="yourPosts">
             <div class="postTitle">
                 {{this.title}}
+                <button class="postLocate" data-id={{this.id}}>see post</button>
             </div>
             <div class="postContent">
                 {{this.post}}
@@ -15,9 +16,5 @@
         {{/each}}
     </div>
 </div>
-<script>
-    document.querySelector("#dashBtn").addEventListener("click", function (event) {
-        event.preventDefault();
-        document.location.replace("/dashboard");
-    });
+<script src="/js/main.js">
 </script>

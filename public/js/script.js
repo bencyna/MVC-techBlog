@@ -16,14 +16,31 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      alert("script working");
+      location.reload();
+    }
+  }
+};
+
+const deleteButtonHandler = async (event) => {
+  event.preventDefault();
+
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`api/posts/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      location.relaod();
     } else {
-      alert("kys");
+      alert("Failed to delete project");
     }
   }
 };
 
 document.querySelector(".postBtn").addEventListener("click", newFormHandler);
+
 document
   .querySelector("#homepageBtn")
   .addEventListener("click", function (event) {
@@ -31,3 +48,7 @@ document
     console.log("homebutton");
     document.location.replace("/");
   });
+
+document
+  .querySelector("#deletePost")
+  .addEventListener("click", deleteButtonHandler);

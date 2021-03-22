@@ -21,7 +21,7 @@
     <h3 id="history">
         Your post history:
     </h3>
-    <div class="col-md-6">
+    <div class="col-md-6 posts">
         {{#each posts as |post|}}
         <div class="yourPosts">
             <div class="postTitle">
@@ -31,6 +31,8 @@
                 {{this.post}}
             </div>
         </div>
+        <button class="deletePost btn-primary" id="deletePost" data-id={{this.id}}>Delete Post
+        </button>
         {{/each}}
     </div>
 </div>
