@@ -11,6 +11,7 @@ this project uses sequelize and handlebars to create a webpage useful for postin
 - [Installation](##Installation)
 - [Usage](##Usage)
 - [License](##License)
+- [Future](##Future)
 - [Contributing](##Contributing)
 - [Tests](##Tests)
 - [Questions](##Questions)
@@ -32,6 +33,10 @@ Below is an exmaple of how these two peices of code appear
 ## License
 
 This project is covered under the MIT License
+
+## Future Developments
+
+Allow the user to update their own posts and have the name and date attached to comments
 
 ## Contributing
 
