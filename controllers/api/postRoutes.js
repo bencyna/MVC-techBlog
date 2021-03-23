@@ -16,7 +16,7 @@ router.post("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/x/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
@@ -25,12 +25,12 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
 
-    console.log(postData);
-
     if (!postData) {
       res.status(404).json({ message: "No Post found with this id" });
       return;
     }
+
+    res.status(204).json();
   } catch (error) {
     res.status(500).json(error);
   }
