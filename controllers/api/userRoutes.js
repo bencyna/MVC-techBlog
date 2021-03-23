@@ -28,9 +28,7 @@ router.post("/login", async (req, res) => {
       res.json({ user: userData, message: "You are now logged in" });
     });
   } catch (error) {
-    // res.status(400).json(error);
-    console.log(error);
-    res.json(error);
+    res.status(400).json(error);
   }
 });
 
@@ -41,6 +39,21 @@ router.post("/logout", (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.post("/signup", async (req, res) => {
+  try {
+    const userData = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    console.log(userData);
+
+    res.status(200).json(userData);
+  } catch (error) {
+    res.status(400).json(error);
   }
 });
 

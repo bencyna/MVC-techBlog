@@ -20,20 +20,20 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <button class="nav-link active" id="homepageBtn" aria-current="page">Home</button>
+                            <a href="/" class="nav-link active" id="homepageBtn" aria-current="page">Home</a>
                         </li>
                         <li class="nav-item">
-                            <button id="dashBtn" class="nav-link">Dashboard</button>
+                            <a href="/dashboard" id="dashBtn" class="nav-link">Dashboard</a>
                         </li>
                         {{#unless logged_in}}
                         <li class="nav-item">
-                            {{!-- if logged in logout if not login button --}}
-                            <button id="loginBtn" class="nav-link">Login</button>
+                            {{!-- if logged in logout if not login a --}}
+                            <a href="login" id="loginBtn" class="nav-link">Login</a>
                         </li>
                         {{/unless}}
                         {{#if logged_in}}
                         <li class="nav-item">
-                            {{!-- if logged in logout if not login button --}}
+                            {{!-- if logged in logout if not login a --}}
                             <button id="logoutBtn" class="nav-link">Logout</button>
                         </li>
                         {{/if}}

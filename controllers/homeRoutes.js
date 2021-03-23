@@ -27,6 +27,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -50,16 +56,25 @@ router.get("/login", (req, res) => {
 
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({
-      where: {
-        id: req.params.id,
-      },
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Comment,
+          attributes: ["comments", "user_id"],
+        },
+      ],
     });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const post = postData.get({ plain: true });
+
+    console.log(post);
 
     res.render("post", {
-      posts,
+      ...post,
       logged_in: req.session.logged_in,
     });
   } catch (error) {
@@ -67,5 +82,9 @@ router.get("/post/:id", withAuth, async (req, res) => {
     res.status(404).json({ message: "No Post found with this id" });
     return;
   }
+});
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
 });
 module.exports = router;

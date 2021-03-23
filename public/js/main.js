@@ -1,6 +1,5 @@
 const goToPost = async (event) => {
   event.preventDefault();
-  console.log("click working");
 
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
@@ -9,9 +8,4 @@ const goToPost = async (event) => {
   }
 };
 
-document.querySelector(".postLocate").addEventListener("click", goToPost);
-
-document.querySelector("#dashBtn").addEventListener("click", function (event) {
-  event.preventDefault();
-  document.location.replace("/dashboard");
-});
+document.querySelector(".posts").addEventListener("click", goToPost);

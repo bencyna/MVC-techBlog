@@ -5,6 +5,7 @@
     <div class="posts">
         {{#each posts as |post|}}
         <div class="yourPosts">
+            <div class="name">~{{user.name}} - {{format_time this.createdAt}} {{format_date this.createdAt}}</div>
             <div class="postTitle">
                 {{this.title}}
                 <button class="postLocate" data-id={{this.id}}>see post</button>

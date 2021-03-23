@@ -20,6 +20,7 @@ main {
   width: 100%;
 }
 
+#comment-content,
 #post-content {
   width: 100%;
 }
@@ -82,4 +83,19 @@ button {
   top: -5%;
   background-color: blue;
   color: white;
+}
+
+#signUp {
+  text-align: right;
+}
+
+.name {
+  text-align: right;
+  padding: 3px;
+  background-color: white;
+  padding-top: 1%;
+}
+
+.comments {
+  background-color: #f0f0f0;
 }
