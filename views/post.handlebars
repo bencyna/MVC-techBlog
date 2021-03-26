@@ -8,8 +8,8 @@
         {{this.post}}
     </div>
     <section class="comments">
-        {{#each Comments as |comment|}}
-        <div class="name">~ {{comment.user_id}}</div>
+        {{#each comments as |comment|}}
+        <div class="name">~ {{comment.user.name}}</div>
         <div class="comments">{{comment.comments}}</div>
         {{/each}}
     </section>

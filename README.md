@@ -36,7 +36,7 @@ This project is covered under the MIT License
 
 ## Future Developments
 
-Allow the user to update their own posts and have the name and date attached to comments
+Allow the user to update and edit their own posts and comments
 
 ## Contributing
 
